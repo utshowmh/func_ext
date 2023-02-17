@@ -1,0 +1,101 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "func",
+	"patterns": [
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#statements"
+		},
+		{
+			"include": "#identifiers"
+		},
+		{
+			"include": "#digits"
+		},
+		{
+			"include": "#single_qouted_strings"
+		},
+		{
+			"include": "#double_qouted_strings"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [
+				{
+					"name": "keyword.control.func",
+					"match": "\\b(let|func|if|else)\\b"
+				},
+				{
+					"name": "constant.language.null.func",
+					"match": "\\b(nil)\\b"
+				},
+				{
+					"name": "constant.language.boolean.func",
+					"match": "\\b(true|false)\\b"
+				},
+				{
+					"name": "support.function.builtin.func",
+					"match": "\\b(print)\\b"
+				}
+			]
+		},
+		"statements": {
+			"patterns": [
+				{
+					"match": "\\b(let)\\s+([A-Za-z_][A-Za-z0-9_]*)\\b",
+					"captures": {
+						"1": {
+							"name": "storage.type.func"
+						},
+						"2": {
+							"name": "support.variable.func"
+						}
+					}
+				}
+			]
+		},
+		"digits": {
+			"patterns": [
+				{
+					"name": "constant.numeric.func",
+					"match": "\\b[0-9]+(?:.[0-9]+)?\\b"
+				}
+			]
+		},
+		"identifiers": {
+			"patterns": [
+				{
+					"name": "variable.other.readwrite.func",
+					"match": "\\b[A-Za-z_][A-Za-z0-9_]*\\b"
+				}
+			]
+		},
+		"double_qouted_strings": {
+			"name": "string.quoted.double.func",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": []
+		},
+		"single_qouted_strings": {
+			"name": "string.quoted.double.func",
+			"begin": "'",
+			"end": "'",
+			"patterns": []
+		},
+		"comments": {
+			"patterns": [
+				{
+					"name": "comment.line.double-slash.func",
+					"match": "\\/\\/.*"
+				}
+			]
+		}
+	},
+	"scopeName": "source.func"
+}

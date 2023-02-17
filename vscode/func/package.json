@@ -1,0 +1,25 @@
+{
+  "name": "func",
+  "displayName": "func",
+  "description": "Syntax highlighter for func",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.73.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "func",
+      "aliases": ["func", "func"],
+      "extensions": [".func"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "func",
+      "scopeName": "source.func",
+      "path": "./syntaxes/func.tmLanguage.json"
+    }]
+  }
+}
